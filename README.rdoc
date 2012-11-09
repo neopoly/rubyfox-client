@@ -3,6 +3,10 @@
 Ruby binding for SmartFox's client.
 http://docs2x.smartfoxserver.com/api-docs/javadoc/client/
 
+Gem[https://rubygems.org/gems/rubyfox-client] |
+Source[https://github.com/neopoly/rubyfox-client] |
+Documentation[http://rubydoc.info/github/neopoly/rubyfox-client/master/file/README.rdoc]
+
 == Installation
 
 Add this line to your application's Gemfile:
