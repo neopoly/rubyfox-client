@@ -12,7 +12,6 @@ Rubyfox::Client.require_libs(ENV['SF_DIR'] + "/lib")
 Rubyfox::Client.boot!
 
 Rubyfox::Client.new(:debug => true) do |client|
-  p :here
   client.on_event :connection do
     client.send :login, *ARGV
   end
@@ -32,8 +31,8 @@ Rubyfox::Client.new(:debug => true) do |client|
   end
 
   client.on_extension "KeepAlive" do |request|
-    p request
-    next_in = request.params.get_int("next_in")
+    next_in = request.params[:next_in]
+    p :keep_alive => next_in
     Thread.start do
       sleep next_in
       client.send_extension "KeepAlive"

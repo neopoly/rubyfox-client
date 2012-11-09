@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'activesupport'
+  gem.add_dependency 'rubyfox-sfsobject', '>= 0.2.2'
 
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rdoc'

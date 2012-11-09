@@ -8,6 +8,8 @@ module Rubyfox
     def self.boot!(vendor_dir=File.expand_path('client/vendor', File.dirname(__FILE__)))
       require_libs vendor_dir
 
+      require 'rubyfox/sfsobject/core_ext'
+
       require 'rubyfox/client/transport'
       require 'rubyfox/client/event_handler'
     end
