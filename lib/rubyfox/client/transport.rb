@@ -12,6 +12,10 @@ module Rubyfox
         @smartfox           = Java::SmartFox.new(@config.debug?)
         @event_handler      = EventHandler.new(@smartfox)
         @extension_handler  = ExtensionHandler.new(@event_handler)
+        if block_given?
+          yield self
+          connect
+        end
       end
 
       def connect

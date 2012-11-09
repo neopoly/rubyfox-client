@@ -1,8 +1,8 @@
 module Rubyfox
   module Client
-    def self.new(*args)
+    def self.new(*args, &block)
       config = Config.new(*args)
-      Transport.new(config)
+      Transport.new(config, &block)
     end
 
     def self.boot!(vendor_dir=File.expand_path('client/vendor', File.dirname(__FILE__)))
