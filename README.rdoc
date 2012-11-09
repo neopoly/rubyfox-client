@@ -23,7 +23,32 @@ Or install it yourself as:
 
 == Usage
 
-See examples/ for usage.
+  require 'rubyfox/client'
+
+  ARGV.size == 3 or abort "usage: simple.rb username password zone"
+
+  Rubyfox::Client.boot!
+
+  client = Rubyfox::Client.new
+  client.on_event :connection do |event|
+    p :connected!
+    client.send :login, *ARGV
+  end
+  client.on_event :login do |event|
+    p :login => event.arguments["zone"]
+    client.disconnect
+  end
+  client.on_event :login_error do |event|
+    p :login_failed
+    client.disconnect
+  end
+  client.on_event :connection_lost do |event|
+    p :disconnected
+    client.exit
+  end
+  client.connect
+
+See https://github.com/neopoly/rubyfox-client/tree/master/examples for more examples.
 
 == TODO
 
