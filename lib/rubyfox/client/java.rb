@@ -1,3 +1,5 @@
+require 'java'
+
 module Rubyfox
   module Client
     module Java
