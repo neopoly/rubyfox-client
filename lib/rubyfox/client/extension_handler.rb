@@ -21,21 +21,32 @@ module Rubyfox
 
       def add(*names, &block)
         names.each do |name|
-          @handler[name.to_s] << block
+          @handler[resolve_command(name)] << block
         end
       end
 
       def remove(*names)
         names.each do |name|
-          @handler[name.to_s].clear
+          @handler[resolve_command(name)].clear
         end
       end
 
       def dispatch(request)
         command = request.command
 
-        @handler[command].each do |handler|
+        handlers = @handler[:any] + @handler[command]
+        handlers.each do |handler|
           handler.call(request)
+        end
+      end
+
+      private
+
+      def resolve_command(name)
+        if name == :any
+          name
+        else
+          name.to_s
         end
       end
     end

@@ -20,23 +20,32 @@ module Rubyfox
 
       def add(*names, &block)
         names.each do |name|
-          type = Event[name]
-          @handler[type] << block
+          @handler[event_type(name)] << block
         end
       end
 
       def remove(*names)
         names.each do |name|
-          type = Event[name]
-          @handler[type].clear
+          @handler[event_type(name)].clear
         end
       end
 
       def dispatch(event)
         type = event.type
 
-        @handler[type].each do |handler|
+        handlers = @handler[:any] + @handler[type]
+        handlers.each do |handler|
           handler.call(event)
+        end
+      end
+
+      private
+
+      def event_type(name)
+        if name == :any
+          name
+        else
+          Event[name]
         end
       end
     end
