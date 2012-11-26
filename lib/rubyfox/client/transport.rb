@@ -1,6 +1,6 @@
 require 'rubyfox/client/java'
 require 'rubyfox/client/config'
-require 'rubyfox/client/requests'
+require 'rubyfox/client/request'
 require 'rubyfox/client/event_handler'
 require 'rubyfox/client/extension_handler'
 
@@ -35,8 +35,8 @@ module Rubyfox
         Java::System.exit(ret)
       end
 
-      def send(request, *args)
-        request = Requests[request, *args]
+      def send(command, *args)
+        request = Request[command].new(*args)
         @smartfox.send(request)
       end
 
