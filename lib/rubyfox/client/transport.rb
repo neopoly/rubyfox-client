@@ -22,6 +22,7 @@ module Rubyfox
         @event_handler.register
         @extension_handler.register
         @smartfox.connect(@config.host, @config.port)
+        sleep 0.1
       end
 
       def disconnect
