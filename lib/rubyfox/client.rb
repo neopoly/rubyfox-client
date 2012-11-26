@@ -11,7 +11,7 @@ module Rubyfox
       require 'rubyfox/sfsobject/core_ext'
 
       require 'rubyfox/client/transport'
-      require 'rubyfox/client/event_handler'
+      require 'rubyfox/client/recorder'
     end
 
     def self.require_libs(dir)
