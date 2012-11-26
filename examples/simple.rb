@@ -10,7 +10,7 @@ client.on_event :connection do |event|
   client.send :login, *ARGV
 end
 client.on_event :login do |event|
-  p :login => event.arguments["zone"]
+  p :login => event.params[:zone]
   client.disconnect
 end
 client.on_event :login_error do |event|
