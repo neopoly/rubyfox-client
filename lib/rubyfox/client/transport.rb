@@ -25,6 +25,10 @@ module Rubyfox
         sleep 0.1
       end
 
+      def connected?
+        @smartfox.connected?
+      end
+
       def disconnect
         @smartfox.disconnect
         @extension_handler.unregister
