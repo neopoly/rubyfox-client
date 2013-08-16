@@ -28,8 +28,14 @@ Or install it yourself as:
   ARGV.size == 3 or abort "usage: simple.rb username password zone"
 
   Rubyfox::Client.boot!
+  
+  # optional
+  options = {
+    host: '127.0.0.1',
+    debug: true
+  }
 
-  client = Rubyfox::Client.new
+  client = Rubyfox::Client.new(options)
   client.on_event :connection do |event|
     p :connected!
     client.send :login, *ARGV
