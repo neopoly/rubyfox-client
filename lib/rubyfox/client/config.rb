@@ -1,7 +1,7 @@
 module Rubyfox
   module Client
     class Config
-      def initialize(options={})
+      def initialize(options = {})
         @options = options
       end
 

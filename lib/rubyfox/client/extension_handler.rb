@@ -4,8 +4,8 @@ module Rubyfox
       Request = Struct.new(:command, :params, :room, :packet_id)
 
       def initialize(event_handler)
-        @handler        = Hash.new { |hash, type| hash[type] = [] }
-        @event_handler  = event_handler
+        @handler = Hash.new { |hash, type| hash[type] = [] }
+        @event_handler = event_handler
       end
 
       def register

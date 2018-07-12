@@ -1,4 +1,4 @@
-require 'rubyfox/client/java'
+require "rubyfox/client/java"
 
 module Rubyfox
   module Client

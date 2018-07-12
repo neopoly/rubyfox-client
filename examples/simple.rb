@@ -1,4 +1,4 @@
-require 'rubyfox/client'
+require "rubyfox/client"
 
 ARGV.size == 3 or abort "usage: simple.rb username password zone"
 

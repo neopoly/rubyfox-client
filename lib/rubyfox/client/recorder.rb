@@ -1,5 +1,5 @@
-require 'timeout'
-require 'rubyfox/client/event'
+require "timeout"
+require "rubyfox/client/event"
 
 module Rubyfox
   module Client
@@ -23,8 +23,8 @@ module Rubyfox
       include Timeout
 
       def initialize(client)
-        @client     = client
-        @events     = Hash.new { |hash, type| hash[type] = [] }
+        @client = client
+        @events = Hash.new { |hash, type| hash[type] = [] }
         @extensions = Hash.new { |hash, command| hash[command] = [] }
         @connection_lost = false
         install_callbacks
@@ -39,7 +39,7 @@ module Rubyfox
         @extensions[command]
       end
 
-      def verify(options={}, &block)
+      def verify(options = {}, &block)
         @client.connect
         wait = options[:timeout] || 1
         timeout wait do

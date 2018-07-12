@@ -1,5 +1,5 @@
-require 'active_support/core_ext/string/inflections'
-require 'rubyfox/client/java'
+require "active_support/core_ext/string/inflections"
+require "rubyfox/client/java"
 
 module Rubyfox
   module Client

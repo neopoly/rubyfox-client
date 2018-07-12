@@ -1,14 +1,14 @@
-require 'rubyfox/client'
+require "rubyfox/client"
 
 unless ARGV.size == 3
   abort "usage: #{$0} username password zone"
 end
 
-unless ENV['SF_DIR']
+unless ENV["SF_DIR"]
   abort "Point SF_DIR to your SmartFox installation"
 end
 
-Rubyfox::Client.require_libs(ENV['SF_DIR'] + "/lib")
+Rubyfox::Client.require_libs(ENV["SF_DIR"] + "/lib")
 Rubyfox::Client.boot!
 
 Rubyfox::Client.new(:debug => true) do |client|

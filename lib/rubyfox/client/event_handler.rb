@@ -1,10 +1,10 @@
-require 'rubyfox/client/event'
+require "rubyfox/client/event"
 
 module Rubyfox
   module Client
     class EventHandler
       def initialize(smartfox)
-        @handler  = Hash.new { |hash, type| hash[type] = [] }
+        @handler = Hash.new { |hash, type| hash[type] = [] }
         @smartfox = smartfox
       end
 

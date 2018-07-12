@@ -1,17 +1,17 @@
-require 'rubyfox/client/java'
-require 'rubyfox/client/config'
-require 'rubyfox/client/request'
-require 'rubyfox/client/event_handler'
-require 'rubyfox/client/extension_handler'
+require "rubyfox/client/java"
+require "rubyfox/client/config"
+require "rubyfox/client/request"
+require "rubyfox/client/event_handler"
+require "rubyfox/client/extension_handler"
 
 module Rubyfox
   module Client
     class Transport
       def initialize(config)
-        @config             = config
-        @smartfox           = Java::SmartFox.new(@config.debug?)
-        @event_handler      = EventHandler.new(@smartfox)
-        @extension_handler  = ExtensionHandler.new(@event_handler)
+        @config = config
+        @smartfox = Java::SmartFox.new(@config.debug?)
+        @event_handler = EventHandler.new(@smartfox)
+        @extension_handler = ExtensionHandler.new(@event_handler)
         if block_given?
           yield self
           connect
@@ -35,7 +35,7 @@ module Rubyfox
         @event_handler.unregister
       end
 
-      def exit(ret=0)
+      def exit(ret = 0)
         disconnect
         Java::System.exit(ret)
       end
@@ -45,7 +45,7 @@ module Rubyfox
         @smartfox.send(request)
       end
 
-      def send_extension(command, params=nil, room=nil)
+      def send_extension(command, params = nil, room = nil)
         send :extension, command.to_s, params, room
       end
 
