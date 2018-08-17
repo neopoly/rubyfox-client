@@ -6,7 +6,7 @@ require 'rubyfox/client/version'
 Gem::Specification.new do |gem|
   gem.name          = "rubyfox-client"
   gem.version       = Rubyfox::Client::VERSION
-  gem.platform      = Gem::Platform::JAVA
+  gem.platform      = "java"
   gem.authors       = ["Peter Leitzen", "Jakob Holderbaum"]
   gem.email         = ["pl@neopoly.de", "jh@neopoly.de"]
   gem.description   = %q{Ruby bindings for SmartFox's client.}
