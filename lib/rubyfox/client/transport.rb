@@ -21,7 +21,15 @@ module Rubyfox
       def connect
         @event_handler.register
         @extension_handler.register
-        @smartfox.connect(@config.host, @config.port)
+
+        config_data = Java::ConfigData.new
+        config_data.host = @config.host
+        config_data.port = @config.port
+        config_data.http_port = @config.http_port
+        config_data.https_port = @config.https_port
+        config_data.zone = @config.zone
+
+        @smartfox.connect(config_data)
         sleep 0.1
       end
 
@@ -63,6 +71,10 @@ module Rubyfox
 
       def remove_event(*names)
         @event_handler.remove(*names)
+      end
+
+      def init_crypto
+        @smartfox.init_crypto
       end
     end
   end

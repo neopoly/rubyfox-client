@@ -17,15 +17,16 @@ module Rubyfox
         @options[:debug] || false
       end
 
-      def udp?
-        false
+      def http_port
+        @options[:http_port] || 8080
       end
 
-      def bluebox?
-        false
+      def https_port
+        @options[:https_port] || 8443
       end
 
-      def bluebox_port
+      def zone
+        @options[:zone] || ""
       end
     end
   end
