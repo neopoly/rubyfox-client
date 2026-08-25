@@ -11,7 +11,7 @@ end
 Rubyfox::Client.require_libs(ENV["SF_DIR"] + "/lib")
 Rubyfox::Client.boot!
 
-Rubyfox::Client.new(:debug => true) do |client|
+Rubyfox::Client.new(:debug => true, :zone => ARGV[2]) do |client|
   client.on_event :connection do
     client.send :login, *ARGV
   end

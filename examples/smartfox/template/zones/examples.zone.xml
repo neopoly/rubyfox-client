@@ -1,0 +1,81 @@
+<zone>
+  <name>examples</name>
+  <isCustomLogin>false</isCustomLogin>
+  <isForceLogout>true</isForceLogout>
+  <applyWordsFilterToUserName>false</applyWordsFilterToUserName>
+  <applyWordsFilterToRoomName>false</applyWordsFilterToRoomName>
+  <applyWordsFilterToPrivateMessages>false</applyWordsFilterToPrivateMessages>
+  <isFilterBuddyMessages>false</isFilterBuddyMessages>
+	<isEncrypted>false</isEncrypted>
+  <maxUsers>10000</maxUsers>
+  <maxUserVariablesAllowed>5</maxUserVariablesAllowed>
+  <maxRoomVariablesAllowed>5</maxRoomVariablesAllowed>
+  <minRoomNameChars>3</minRoomNameChars>
+  <maxRoomNameChars>100</maxRoomNameChars>
+  <maxRooms>20000</maxRooms>
+  <maxRoomsCreatedPerUser>10</maxRoomsCreatedPerUser>
+  <userCountChangeUpdateInterval>1000</userCountChangeUpdateInterval>
+  <userReconnectionSeconds>0</userReconnectionSeconds>
+  <overrideMaxUserIdleTime>30</overrideMaxUserIdleTime>
+	<maxFailedLogins>10</maxFailedLogins>
+  <allowGuestUsers>false</allowGuestUsers>
+  <guestUserNamePrefix>Guest#</guestUserNamePrefix>
+  <publicRoomGroups>default</publicRoomGroups>
+  <defaultRoomGroups>default</defaultRoomGroups>
+  <defaultPlayerIdGeneratorClass></defaultPlayerIdGeneratorClass>
+	<allowInvitationsOnlyForBuddies>true</allowInvitationsOnlyForBuddies>
+	<maxUsersPerJoinInvitationRequest>5</maxUsersPerJoinInvitationRequest>
+	<geoLocationEnabled>false</geoLocationEnabled>
+  <wordsFilter active="false">
+    <useWarnings>false</useWarnings>
+    <warningsBeforeKick>3</warningsBeforeKick>
+    <kicksBeforeBan>2</kicksBeforeBan>
+    <banDuration>1440</banDuration>
+    <maxBadWordsPerMessage>0</maxBadWordsPerMessage>
+    <kicksBeforeBanMinutes>3</kicksBeforeBanMinutes>
+    <secondsBeforeBanOrKick>5</secondsBeforeBanOrKick>
+    <warningMessage>Stop swearing or you will be banned</warningMessage>
+    <kickMessage>Swearing not allowed: you are being kicked</kickMessage>
+    <banMessage>Too much swearing: you are banned</banMessage>
+    <wordsFile>config/wordsFile.txt</wordsFile>
+    <filterMode>BLACKLIST</filterMode>
+    <banMode>NAME</banMode>
+    <hideBadWordWithCharacter>*</hideBadWordWithCharacter>
+  </wordsFilter>
+  <floodFilter active="false">
+    <banDurationMinutes>1440</banDurationMinutes>
+    <maxFloodingAttempts>5</maxFloodingAttempts>
+    <secondsBeforeBan>5</secondsBeforeBan>
+    <banMode>NAME</banMode>
+    <logFloodingAttempts>true</logFloodingAttempts>
+    <banMessage>Too much flooding, you are banned</banMessage>
+  </floodFilter>
+  <rooms>
+  </rooms>
+  <disabledSystemEvents/>
+  <privilegeManager active="false">
+    <profiles/>
+  </privilegeManager>
+  <extension>
+    <name>examples</name>
+    <type>JAVA</type>
+    <file>com.neopoly.rubyfox.RubyExtension</file>
+    <propertiesFile></propertiesFile>
+    <reloadMode>NONE</reloadMode>
+  </extension>
+  <buddyList active="false">
+    <allowOfflineBuddyVariables>true</allowOfflineBuddyVariables>
+    <maxItemsPerList>100</maxItemsPerList>
+    <maxBuddyVariables>15</maxBuddyVariables>
+    <offlineBuddyVariablesCacheSize>500</offlineBuddyVariablesCacheSize>
+    <customStorageClass></customStorageClass>
+    <useTempBuddies>true</useTempBuddies>
+    <buddyStates>
+      <string>Available</string>
+      <string>Away</string>
+      <string>Occupied</string>
+    </buddyStates>
+    <badWordsFilter isActive="false"/>
+  </buddyList>
+  <databaseManager active="false"/>
+</zone>
