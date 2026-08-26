@@ -4,7 +4,7 @@ ARGV.size == 3 or abort "usage: simple.rb username password zone"
 
 Rubyfox::Client.boot!
 
-client = Rubyfox::Client.new
+client = Rubyfox::Client.new(:zone => ARGV[2])
 client.on_event :connection do |event|
   p :connected!
   client.send :login, *ARGV
